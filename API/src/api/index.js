@@ -1,6 +1,11 @@
 import { Router } from 'express'
 import user from './user'
 import auth from './auth'
+import restaurante from './restaurante'
+import menu from './menu'
+import comentario from './comentario'
+import categoria from './categoria'
+import imagenRestaurante from './imagenRestaurante'
 
 const router = new Router()
 
@@ -29,5 +34,10 @@ const router = new Router()
  */
 router.use('/users', user)
 router.use('/auth', auth)
+router.use('/restaurantes', restaurante)
+router.use('/menus', menu)
+router.use('/comentarios', comentario)
+router.use('/categorias', categoria)
+router.use('/imagenRestaurantes', imagenRestaurante)
 
 export default router

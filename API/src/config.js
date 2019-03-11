@@ -39,7 +39,7 @@ const config = {
   test: { },
   development: {
     mongo: {
-      uri: 'mongodb://localhost/restaur-api-dev',
+      uri: 'mongodb://carlos:Carlos1@ds163835.mlab.com:63835/restaulike',
       options: {
         debug: true
       }
@@ -49,7 +49,7 @@ const config = {
     ip: process.env.IP || undefined,
     port: process.env.PORT || 8080,
     mongo: {
-      uri: process.env.MONGODB_URI || 'mongodb://localhost/restaur-api'
+      uri: process.env.MONGODB_URI || 'mongodb://carlos:Carlos1@ds163835.mlab.com:63835/restaulike'
     }
   }
 }
