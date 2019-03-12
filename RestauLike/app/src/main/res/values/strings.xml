@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">RestauLike</string>
     <string name="title_activity_dash_board">DashBoardActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_maps">Cercanos</string>
+    <string name="title_list">Restaurantes</string>
+    <string name="title_user">Mi usuario</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

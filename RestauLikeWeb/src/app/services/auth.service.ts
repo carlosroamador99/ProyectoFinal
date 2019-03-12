@@ -8,7 +8,7 @@ import { LoginResponse } from '../interfaces/login-response.interface';
 
   const jwtDecode = require('jwt-decode');
 
-  const authUrl = `${environment.apiUrl}/auth`;
+  const authUrl = `${environment.apiUrl}/auth`; //angular
   const master_key = `${environment.MASTER_KEY}`
   
 @Injectable({
@@ -24,7 +24,7 @@ export class AuthService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Basic ` + btoa(`${loginDto.email}:${loginDto.password}`),
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': ''
       })
     };
     return this.http.post<LoginResponse>(`${authUrl}?access_token=${master_key}`, null, requestOptions);
