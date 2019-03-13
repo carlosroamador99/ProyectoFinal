@@ -24,7 +24,7 @@ export class AuthService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Basic ` + btoa(`${loginDto.email}:${loginDto.password}`),
-        'Access-Control-Allow-Origin': ''
+        'Access-Control-Allow-Origin': '*'
       })
     };
     return this.http.post<LoginResponse>(`${authUrl}?access_token=${master_key}`, null, requestOptions);

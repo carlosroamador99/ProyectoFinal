@@ -1,0 +1,17 @@
+<div fxLayout="column" fFlexFill>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Entrantes
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+ 
+      <mat-list role="list" placeholder="Menu" [(ngModel)]="menu" name="menu">
+        <mat-list-item role="listitem" *ngFor="let menu of menu">{{menu.entrante}}</mat-list-item>
+      </mat-list>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

@@ -11,7 +11,7 @@ export const AppRoutes: Routes = [{
   path: '',
   component: AdminLayoutComponent,
   children:[{
-    path: 'dashboard',
+    path: '',
     loadChildren:'./dashboard/dashboard.module#DashboardModule'
   }]
 }, {

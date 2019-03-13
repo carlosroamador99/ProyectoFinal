@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { state } from '@angular/animations';
 
 export interface BadgeItem {
   type: string;
@@ -22,15 +23,15 @@ export interface Menu {
 
 const MENUITEMS = [
   {
-    state: '/',
+    state: 'dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'explore'
   },
   {
-    state: 'http://primer.nyasha.me/docs',
-    name: 'DOCS',
-    type: 'extTabLink',
+    state: 'menu-rest',
+    name: 'Menú',
+    type: 'link',
     icon: 'local_library'
   }
 ];
