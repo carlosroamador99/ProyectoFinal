@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="editarRest()">
+
+  <div fxLayout="column" fxLayoutAlign="space-around">
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Nombre" [formControl]="form.controls['nombre']">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Calle" [formControl]="form.controls['calle']">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Descripcion" [formControl]="form.controls['descripcion']">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Localizacion" [formControl]="form.controls['localizacion']">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Horario" [formControl]="form.controls['horario']">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput placeholder="Codigo Postal" [formControl]="form.controls['cod_post']">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+        <input matInput placeholder="Añadir administrador" [formControl]="form.controls['user']">
+      </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Editar</button>
+    <button mat-raised-button color="warn" (click)="eliminarRest()">Eliminar</button>
+  </div>
+</form>

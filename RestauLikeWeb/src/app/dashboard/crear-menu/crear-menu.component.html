@@ -1,0 +1,30 @@
+<div fxLayout="column" fFlexFill>
+  <mat-form-field class="example-full-width" name="entrantes">
+    <input matInput placeholder="Entrantes" [(ngModel)]="entrantes">
+  </mat-form-field>
+  <p>
+
+    <mat-form-field class="example-full-width" name="primeros_platos">
+      <input matInput placeholder="Primeros Platos" [(ngModel)]="primeros_platos">
+    </mat-form-field>
+    <p>
+
+      <mat-form-field class="example-full-width" name="segundos_platos">
+        <input matInput placeholder="Segundos Platos" [(ngModel)]="segundos_platos">
+      </mat-form-field>
+      <p>
+
+        <mat-form-field class="example-full-width" name="postres">
+          <input matInput placeholder="Postres" [(ngModel)]="postres">
+        </mat-form-field>
+        <p>
+
+          <mat-form-field class="example-full-width" name="bebidas">
+            <input matInput placeholder="Bebidas" [(ngModel)]="bebidas">
+          </mat-form-field>
+          <p>
+
+            <div class="botones" fxLayoutAlign="center end">
+              <button mat-raised-button color="warn" (click)="crearMenu()">Crear Menu</button>
+            </div>
+</div>

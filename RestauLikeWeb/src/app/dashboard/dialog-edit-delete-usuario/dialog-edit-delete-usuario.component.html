@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="editUser()">
+
+    <div fxLayout="column" fxLayoutAlign="space-around">
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Email" [formControl]="form.controls['email']">
+      </mat-form-field>
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Nombre" [formControl]="form.controls['name']">
+      </mat-form-field>
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Role" [formControl]="form.controls['role']">
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Editar</button>
+      <button mat-raised-button color="warn" (click)=" eliminarUser()">Eliminar</button>
+    </div>
+  </form>

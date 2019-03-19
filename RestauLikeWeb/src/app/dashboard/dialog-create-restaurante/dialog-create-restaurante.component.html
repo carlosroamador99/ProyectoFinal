@@ -1,0 +1,33 @@
+<div fxLayout="column" fFlexFill>
+  <mat-form-field class="example-full-width" name="nombre">
+    <input matInput placeholder="Nombre" [(ngModel)]="nombre">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" name="calle">
+    <input matInput placeholder="Calle" [(ngModel)]="calle">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" name="descripcion">
+    <input matInput placeholder="Descripcion" [(ngModel)]="descripcion">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" name="horario">
+    <input matInput placeholder="Horario" [(ngModel)]="horario">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" name="cod_post">
+    <input matInput placeholder="Codigo Postal" [(ngModel)]="cod_post">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" name="categoria">
+    <input matInput placeholder="Categoria" [(ngModel)]="categoria">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" name="user">
+    <input matInput placeholder="Id del Usuario" [(ngModel)]="user">
+  </mat-form-field>
+
+  <div class="botones" fxLayoutAlign="center end">
+    <button mat-raised-button color="warn" (click)="crearRestaurante()">Crear Restaurante</button>
+  </div>
+</div>

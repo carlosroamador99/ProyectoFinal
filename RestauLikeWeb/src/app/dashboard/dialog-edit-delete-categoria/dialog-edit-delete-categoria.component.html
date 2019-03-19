@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="editarCategoria()">
+
+    <div fxLayout="column" fxLayoutAlign="space-around">
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Nombre" [formControl]="form.controls['categoria']">
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Editar</button>
+      <button mat-raised-button color="warn" (click)="eliminarCategoria()">Eliminar</button>
+    </div>
+  </form>

@@ -1,0 +1,9 @@
+<div fxLayout="column" fFlexFill>
+    <mat-form-field class="example-full-width" name="categoria">
+      <input matInput placeholder="Nombre" [(ngModel)]="categoria">
+    </mat-form-field>
+  
+    <div class="botones" fxLayoutAlign="center end">
+      <button mat-raised-button color="warn" (click)="crearCategoria()">Crear Categoria</button>
+    </div>
+  </div>

@@ -32,17 +32,23 @@ export class AuthService {
 
   setLoginData(LoginResponse: LoginResponse) {
     localStorage.setItem('token', LoginResponse.token);
-    localStorage.setItem('name', LoginResponse.name);
-    localStorage.setItem('email', LoginResponse.email);
-    localStorage.setItem('role', LoginResponse.role);
+    localStorage.setItem('name', LoginResponse.user.name);
+    localStorage.setItem('email', LoginResponse.user.email);
+    localStorage.setItem('role', LoginResponse.user.role);
+    localStorage.setItem('userId', LoginResponse.user.id);
   }
 
   getToken(): string {
     return localStorage.getItem('token');
   }
 
+  getUserId(): string {
+    return localStorage.getItem('userId');
+  }
+
   getTokenDecode() {
-    if (!(this.getToken() == null)) {
+    if (this.getToken() != null) {
+      console.log(jwtDecode(this.getToken()));
       return jwtDecode(this.getToken());
     } else {
       return null;
@@ -50,18 +56,15 @@ export class AuthService {
   }
 
   isAdmin(){
-    if(!(this.getTokenDecode() == null)){
-      if(this.getTokenDecode().role === 'admin'){
-        return true;
-      } else{
-        return false;
+    const role = localStorage.getItem('role');
+    if( role != null){
+      if(role === 'admin'){
+        return 1;
+      } else if (role === 'superadmin'){
+        return 2;
       }
     } else {
       return false;
     }
-  }
-
-  logOut(){
-    localStorage.clear();
   }
 }

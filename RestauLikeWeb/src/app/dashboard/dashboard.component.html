@@ -3,21 +3,20 @@
 <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title name = "nombre" ><h1>{{nombre}}</h1></mat-card-title>
+      <mat-card-subtitle name= "calle"><h2>{{calle}}</h2></mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img *ngIf="url_imagen" name = "url_imagen" [src]= "url_imagen">
+    <img *ngIf="!url_imagen" name = "url_imagen_default" src= "data:image/jpeg;base64,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">
     <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
+      <p name = "descripcion">
+        <h3>¿Quienes somos?: {{descripcion}}</h3>
+      <p name = "categoria" *ngIf="categoria">
+        {{categoria}}
+      <p name = "horario">
+          <h3>¿Nuestro horario?: {{horario}}</h3>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-raised-button color="accent"  (click)="editarMenu()">Editar Info</button>
     </mat-card-actions>
   </mat-card>
-
-

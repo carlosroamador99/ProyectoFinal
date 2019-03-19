@@ -1,7 +1,7 @@
 export class CategoriaDto{
-    categoria: string[];
+    categoria: string;
 
-    constructor(c: string[]){
+    constructor(c: string){
         this.categoria = c;
     }
 }

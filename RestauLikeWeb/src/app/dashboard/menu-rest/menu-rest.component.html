@@ -1,4 +1,4 @@
-<div fxLayout="column" fFlexFill>
+<div fxLayout="column" fFlexFill name="menuRestaurante">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -6,12 +6,58 @@
           Entrantes
         </mat-panel-title>
       </mat-expansion-panel-header>
-
- 
-      <mat-list role="list" placeholder="Menu" [(ngModel)]="menu" name="menu">
-        <mat-list-item role="listitem" *ngFor="let menu of menu">{{menu.entrante}}</mat-list-item>
+      <mat-list role="list" placeholder="Menu" name="entrantes">
+        <mat-list-item role="listitem">{{entrantes}}</mat-list-item>
       </mat-list>
-
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Primeros Platos
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list role="list" placeholder="Menu" name="primeros_platos">
+        <mat-list-item role="listitem">{{primeros_platos}}</mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Segundos Platos
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list role="list" placeholder="Menu" name="segundos_platos">
+        <mat-list-item role="listitem">{{segundos_platos}}</mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Postres
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list role="list" placeholder="Menu" name="postres">
+        <mat-list-item role="listitem">{{postres}}</mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Bebidas
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list role="list" placeholder="Menu" name="bebidas">
+        <mat-list-item role="listitem">{{bebidas}}</mat-list-item>
+      </mat-list>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+<button mat-raised-button color="warn" (click)="openDialogEditUser(id)">Editar menú</button>

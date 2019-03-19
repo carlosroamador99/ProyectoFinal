@@ -1,0 +1,34 @@
+<div fxLayout="column" fFlexFill>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" [(ngModel)]="nombre">
+  </mat-form-field>
+  <p>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Calle" [(ngModel)]="calle">
+    </mat-form-field>
+    <p>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Descripcion" [(ngModel)]="descripcion">
+      </mat-form-field>
+      <p>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Localizacion" [(ngModel)]="localizacion">
+        </mat-form-field>
+        <p>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Horario" [(ngModel)]="horario">
+          </mat-form-field>
+          <p>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Codigo Postal" [(ngModel)]="cod_post">
+            </mat-form-field>
+            <p>
+
+              <div class="botones" fxLayoutAlign="center end">
+                <button mat-raised-button color="raised" (click)="editRestaurante()">Editar</button>
+              </div>
+</div>

@@ -2,8 +2,10 @@ import { CategoriaDto } from "./categoria.dto";
 import { UrlImagenDto } from "./url-imagen.dto";
 import { MenuRestDto } from "./menu.dto";
 import { ComentarioDto } from "./comentario.dto";
+import { UserDto } from "./user.dto";
 
 export class RestauranteDto{
+    id: string
     nombre: string;
     calle: string;
     descripcion: string;
@@ -14,10 +16,13 @@ export class RestauranteDto{
     url_imagen: UrlImagenDto;
     menu: MenuRestDto;
     comentario: ComentarioDto;
+    user: string;
 
-    constructor(nombre: string, descripcion: string, loc: string, horario: string, cod: string,
-        categoria: CategoriaDto, url: UrlImagenDto, menu: MenuRestDto, coment: ComentarioDto){
+    constructor(id: string, nombre: string, calle: string, descripcion: string, loc: string, horario: string, cod: string,
+        categoria: CategoriaDto, url: UrlImagenDto, menu: MenuRestDto, coment: ComentarioDto, user: string){
+            this.id = id;
             this.nombre = nombre;
+            this.calle;
             this.descripcion = descripcion;
             this.localizacion = loc;
             this.horario = horario;
@@ -26,6 +31,7 @@ export class RestauranteDto{
             this.url_imagen = url;
             this.menu = menu;
             this.comentario = coment;
+            this.user = user;
         }
 
 }

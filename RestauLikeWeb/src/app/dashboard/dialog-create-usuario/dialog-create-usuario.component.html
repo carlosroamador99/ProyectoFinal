@@ -1,0 +1,21 @@
+<div fxLayout="column" fFlexFill>
+    <mat-form-field class="example-full-width" name="email">
+      <input matInput placeholder="Email" [(ngModel)]="email">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" name="password">
+      <input matInput placeholder="Password" [(ngModel)]="password">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" name="name">
+      <input matInput placeholder="Name" [(ngModel)]="name">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" name="role">
+      <input matInput placeholder="Role" [(ngModel)]="role">
+    </mat-form-field>
+  
+    <div class="botones" fxLayoutAlign="center end">
+      <button mat-raised-button color="warn" (click)="createUser()">Crear Usuario</button>
+    </div>
+  </div>
