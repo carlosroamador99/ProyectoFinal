@@ -1,5 +1,6 @@
 package com.example.restaulike.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,13 +10,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.restaulike.R;
-import com.example.restaulike.retrofit.services.MapaFragmentInteractionListener;
-import com.example.restaulike.retrofit.services.RestauranteInteractionListener;
+import com.example.restaulike.interactionListeners.MapaFragmentInteractionListener;
+import com.example.restaulike.interactionListeners.RestauranteInteractionListener;
+import com.example.restaulike.interactionListeners.UserInteractionListener;
 import com.example.restaulike.ui.fragment.MapFragment;
 import com.example.restaulike.ui.fragment.RestaurantesFragment;
 import com.example.restaulike.ui.fragment.UserFragment;
 
-public class DashBoardActivity extends AppCompatActivity implements MapaFragmentInteractionListener, RestauranteInteractionListener {
+public class DashBoardActivity extends AppCompatActivity implements MapaFragmentInteractionListener, RestauranteInteractionListener, UserInteractionListener {
 
     private TextView mTextMessage;
     private Fragment fMapa;
@@ -64,4 +66,10 @@ public class DashBoardActivity extends AppCompatActivity implements MapaFragment
                 .commit();
     }
 
+    @Override
+    public void onClickView(String id) {
+        Intent intent = new Intent(DashBoardActivity.this, RestauranteDetails.class );
+        intent.putExtra("id", id);
+        startActivity(intent);
+    }
 }

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.restaulike.R;
 import com.example.restaulike.model.LoginResponse;
 import com.example.restaulike.model.RegistroResponse;
+import com.example.restaulike.model.User;
 import com.example.restaulike.retrofit.UtilToken;
 import com.example.restaulike.retrofit.generator.ServiceGenerator;
 import com.example.restaulike.retrofit.services.LoginService;
@@ -53,7 +54,9 @@ public class RegistroActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                         if (response.code() == 201){
+                            User tmp = response.body().getUser();
                             UtilToken.setToken(RegistroActivity.this, response.body().getToken());
+                            UtilToken.setuserData(RegistroActivity.this, tmp.getName(), tmp.getEmail(),tmp.getPicture());
                             startActivity(new Intent(RegistroActivity.this, DashBoardActivity.class));
                             finish();
                         }else{

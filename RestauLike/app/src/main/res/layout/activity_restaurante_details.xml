@@ -4,6 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".ui.activity.RestauranteDetails">
+
+    <ImageView
+        android:id="@+id/img_rest"
+        android:layout_width="0dp"
+        android:layout_height="184dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/nombre_rest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Nombre Rest"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_rest" />
+
+    <TextView
+        android:id="@+id/descripcion_rest"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Descripcion"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/nombre_rest"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_rest" />
+
+    <TextView
+        android:id="@+id/calle_rest"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Calle"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/descripcion_rest"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion_rest" />
+
+    <TextView
+        android:id="@+id/horario_rest"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Horario"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/calle_rest"
+        app:layout_constraintTop_toBottomOf="@+id/calle_rest" />
+
+    <TextView
+        android:id="@+id/localizacion_rest"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Localizacion"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/horario_rest"
+        app:layout_constraintTop_toBottomOf="@+id/horario_rest" />
+
+    <TextView
+        android:id="@+id/cod_post_rest"
+        android:layout_width="382dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="Codigo Postal"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/localizacion_rest"
+        app:layout_constraintTop_toBottomOf="@+id/localizacion_rest" />
+
+    <TextView
+        android:id="@+id/categoria_rest"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Categoria"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/cod_post_rest"
+        app:layout_constraintTop_toBottomOf="@+id/cod_post_rest" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="Ver Menu"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/categoria_rest"
+        app:layout_constraintStart_toStartOf="@+id/categoria_rest"
+        app:layout_constraintTop_toBottomOf="@+id/categoria_rest" />
 
 </android.support.constraint.ConstraintLayout>

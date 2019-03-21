@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
 
-    private static final String BASE_URL = " https://polar-spire-63445.herokuapp.com/" ;
+    private static final String BASE_URL = " https://polar-spire-63445.herokuapp.com" ;
 
     // http://localhost:9000
 

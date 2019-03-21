@@ -21,11 +21,11 @@ export class UserService {
     const requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.authService.getToken()}`,
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.post<UserResponse>(`${usuarioUrl}`, dto, requestOptions);
+    console.log(this.authService.getToken());
+    return this.http.post<UserResponse>(`${usuarioUrl}?access_token=${environment.MASTER_KEY}`, dto, requestOptions);
   }
 
   deleteUsuario(id: string) {

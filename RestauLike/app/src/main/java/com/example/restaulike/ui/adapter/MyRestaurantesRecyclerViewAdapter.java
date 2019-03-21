@@ -1,5 +1,6 @@
 package com.example.restaulike.ui.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,19 +9,24 @@ import android.widget.TextView;
 
 import com.example.restaulike.R;
 import com.example.restaulike.model.Restaurante;
-import com.example.restaulike.retrofit.services.RestauranteInteractionListener;
+import com.example.restaulike.interactionListeners.RestauranteInteractionListener;
+import com.example.restaulike.viewModel.RestauranteViewModel;
 
 import java.util.List;
 
 
 public class MyRestaurantesRecyclerViewAdapter extends RecyclerView.Adapter<MyRestaurantesRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Restaurante> mValues;
+    private RestauranteViewModel viewModel;
+    private List<Restaurante> mValues;
     private final RestauranteInteractionListener mListener;
+    private Context ctx;
 
-    public MyRestaurantesRecyclerViewAdapter(List<Restaurante> items, RestauranteInteractionListener listener) {
-        mValues = items;
-        mListener = listener;
+
+    public MyRestaurantesRecyclerViewAdapter(Context ctx, List<Restaurante> lRestaurantes, RestauranteInteractionListener rListener, int layout) {
+        mValues = lRestaurantes;
+        mListener = rListener;
+        this.ctx = ctx;
     }
 
     @Override
@@ -32,19 +38,24 @@ public class MyRestaurantesRecyclerViewAdapter extends RecyclerView.Adapter<MyRe
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        // holder.mItem = mValues.get(position);
-        // holder.mIdView.setText(mValues.get(position).id);
-        // holder.mContentView.setText(mValues.get(position).content);
+         holder.restaurante = mValues.get(position);
+         holder.nombre.setText(holder.restaurante.getNombre());
+        holder.calle.setText(holder.restaurante.getCalle());
+        holder.horario.setText(holder.restaurante.getHorario());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
+                    mListener.onClickView(holder.restaurante.getId());
                 }
             }
         });
+    }
+
+    public void setNuevoRestaurante(List<Restaurante> restaurantes){
+        this.mValues = restaurantes;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -54,20 +65,22 @@ public class MyRestaurantesRecyclerViewAdapter extends RecyclerView.Adapter<MyRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public Restaurante mItem;
+        public final TextView nombre;
+        public final TextView calle;
+        public final TextView horario;
+        public Restaurante restaurante;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            nombre = (TextView) view.findViewById(R.id.nombre);
+            calle = (TextView) view.findViewById(R.id.calle);
+            horario = view.findViewById(R.id.horario_rest);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString();
         }
     }
 }
