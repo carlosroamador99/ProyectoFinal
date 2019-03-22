@@ -16,13 +16,14 @@ public class Restaurante {
     private String localizacion;
     private String codPost;
     private List<Categoria> categorias;
+    private Menu menu;
     private List<ImgRestaurante> urlImagen;
     private List<Comentario> comentarios;
     private User user;
 
     public Restaurante(){}
 
-    public Restaurante(String id, String nombre, String calle, String descripcion, String horario, String localizacion, String codPost, List<Categoria> categorias, List<ImgRestaurante> urlImagen, List<Comentario> comentarios, User user) {
+    public Restaurante(String id, String nombre, String calle, String descripcion, String horario, String localizacion, String codPost, List<Categoria> categorias, Menu menu, List<ImgRestaurante> urlImagen, List<Comentario> comentarios, User user) {
         this.id = id;
         this.nombre = nombre;
         this.calle = calle;
@@ -31,6 +32,7 @@ public class Restaurante {
         this.localizacion = localizacion;
         this.codPost = codPost;
         this.categorias = categorias;
+        this.menu = menu;
         this.urlImagen = urlImagen;
         this.comentarios = comentarios;
         this.user = user;
@@ -42,6 +44,14 @@ public class Restaurante {
 
     public void setCalle(String calle) {
         this.calle = calle;
+    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
 
     public String getId() {
@@ -142,6 +152,7 @@ public class Restaurante {
         if (codPost != null ? !codPost.equals(that.codPost) : that.codPost != null) return false;
         if (categorias != null ? !categorias.equals(that.categorias) : that.categorias != null)
             return false;
+        if (menu != null ? !menu.equals(that.menu) : that.menu != null) return false;
         if (urlImagen != null ? !urlImagen.equals(that.urlImagen) : that.urlImagen != null)
             return false;
         if (comentarios != null ? !comentarios.equals(that.comentarios) : that.comentarios != null)
@@ -159,11 +170,13 @@ public class Restaurante {
         result = 31 * result + (localizacion != null ? localizacion.hashCode() : 0);
         result = 31 * result + (codPost != null ? codPost.hashCode() : 0);
         result = 31 * result + (categorias != null ? categorias.hashCode() : 0);
+        result = 31 * result + (menu != null ? menu.hashCode() : 0);
         result = 31 * result + (urlImagen != null ? urlImagen.hashCode() : 0);
         result = 31 * result + (comentarios != null ? comentarios.hashCode() : 0);
         result = 31 * result + (user != null ? user.hashCode() : 0);
         return result;
     }
+
 
     @Override
     public String toString() {
@@ -176,6 +189,7 @@ public class Restaurante {
                 ", localizacion='" + localizacion + '\'' +
                 ", codPost='" + codPost + '\'' +
                 ", categorias=" + categorias +
+                ", menu=" + menu +
                 ", urlImagen=" + urlImagen +
                 ", comentarios=" + comentarios +
                 ", user=" + user +

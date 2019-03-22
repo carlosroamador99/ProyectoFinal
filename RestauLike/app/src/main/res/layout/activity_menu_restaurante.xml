@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.activity.MenuRestaurante">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/entrantes"
+        android:layout_width="395dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/prim_platos"
+        android:layout_width="395dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/entrantes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entrantes" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/seg_platos"
+        android:layout_width="395dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/prim_platos"
+        app:layout_constraintStart_toStartOf="@+id/prim_platos"
+        app:layout_constraintTop_toBottomOf="@+id/prim_platos" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/postres"
+        android:layout_width="395dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/seg_platos"
+        app:layout_constraintStart_toStartOf="@+id/seg_platos"
+        app:layout_constraintTop_toBottomOf="@+id/seg_platos" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bebidas"
+        android:layout_width="395dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/postres"
+        app:layout_constraintStart_toStartOf="@+id/postres"
+        app:layout_constraintTop_toBottomOf="@+id/postres" />
+
+</android.support.constraint.ConstraintLayout>

@@ -2,10 +2,13 @@ package com.example.restaulike.ui.activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +31,7 @@ public class RestauranteDetails extends AppCompatActivity {
     private RestauranteViewModel restauranteViewModel;
     private TextView tvNombreRest, tvDescripcionRest, tvCalleRest, tvHorarioRest, tvLocalizacionRest, tvCodPostRest, tvCategoria;
     private ImageView ivImgRest;
+    private Button menus;
     RestauranteService restauranteService;
 
     @Override
@@ -44,6 +48,7 @@ public class RestauranteDetails extends AppCompatActivity {
         tvCodPostRest = findViewById(R.id.cod_post_rest);
         tvCategoria = findViewById(R.id.categoria_rest);
         ivImgRest = findViewById(R.id.img_rest);
+        menus = findViewById(R.id.menus_rest);
 
         restauranteViewModel = ViewModelProviders.of(this).get(RestauranteViewModel.class);
         restauranteViewModel.getRestauranteDetails(restId);
@@ -67,6 +72,11 @@ public class RestauranteDetails extends AppCompatActivity {
                     }
                 });
 
+        menus.setOnClickListener((View v) -> {
+            Intent intent = new Intent(RestauranteDetails.this, MenuRestaurante.class);
+            intent.putExtra("id", restId);
+            startActivity(intent);
+        });
 
         }
     }
